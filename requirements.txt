@@ -2,3 +2,4 @@ pydantic
 langchain_openai
 aiofiles
 AsyncWriter
+aiocsv
