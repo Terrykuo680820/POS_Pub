@@ -1,3 +1,4 @@
 pydantic
 langchain_openai 
 aiofiles
+aiocsv
