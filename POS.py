@@ -9,7 +9,7 @@ from langchain_core.runnables import RunnablePassthrough, chain
 from langchain_core.runnables import RunnableLambda,  RunnableBranch, RunnableSequence, RunnableParallel
 from langchain_core.output_parsers import PydanticOutputParser
 import aiofiles
-#from aiocsv import AsyncWriter
+from aiocsv import AsyncWriter
 import json
 import csv
 import random
@@ -296,7 +296,7 @@ class POS_Robot:
         await asyncio.gather(
             self.save_to_json(data),
             self.save_to_custom_json(data),
-            #self.save_to_csv(data)
+            self.save_to_csv(data)
         )
 
     #修改後的異步存檔方法
@@ -354,7 +354,7 @@ class POS_Robot:
             except Exception as e:
                 logging.error(f"自訂JSON存檔異常：{str(e)}")
                 raise
-    '''      
+            
     async def save_to_csv(self, data: BrunchOrder):
         """CSV格式異步輸出"""
         try:
@@ -373,7 +373,7 @@ class POS_Robot:
         except Exception as e:
             logging.error(f"CSV異步存檔異常：{str(e)}")
             raise
-        '''
+
     def visualize_chain(self):
         """視覺化完整的 POS 處理鏈（full_chain + processing_chain）"""
         try:
