@@ -1,0 +1,5 @@
+{
+    "max_retries": 3,
+    "fallback_model": "gpt-3.5-turbo",
+    "emergency_save_path": "./emergency_backups/"
+  }
